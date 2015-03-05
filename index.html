@@ -27,6 +27,11 @@
 
   <script type="text/x-handlebars" data-template-name='products'>
     <h1>Welcome to Products</h1>
+    {{#each}}
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <p>{{price}}</p>
+    {{/each}}
   </script>
 
   <script src="js/libs/jquery-1.11.2.min.js"></script>
