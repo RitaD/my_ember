@@ -9,6 +9,7 @@
     <div class="navbar">
       {{#link-to 'index' tagName='li'}}Home{{/link-to}}
       {{#link-to 'about' tagName='li'}}About{{/link-to}}
+      {{#link-to 'products' tagName='li'}}Products{{/link-to}}
     </div>
     <div class="container">
       {{outlet}}
@@ -20,8 +21,12 @@
     <p>Its {{time}}</p>
   </script>
 
-    <script type="text/x-handlebars" data-template-name='about'>
+  <script type="text/x-handlebars" data-template-name='about'>
     <h1>Welcome to About</h1>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name='products'>
+    <h1>Welcome to Products</h1>
   </script>
 
   <script src="js/libs/jquery-1.11.2.min.js"></script>
