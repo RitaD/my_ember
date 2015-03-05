@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>My ember app</title>
 </head>
 <body>
 
@@ -28,10 +28,16 @@
   <script type="text/x-handlebars" data-template-name='products'>
     <h1>Welcome to Products</h1>
     {{#each}}
-      <h2>{{title}}</h2>
-      <p>{{description}}</p>
-      <p>{{price}}</p>
+      {{#link-to 'product' this}}
+        <h2>{{title}}</h2>
+      {{/link-to}}
     {{/each}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name='product'>
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <p>{{price}}</p>
   </script>
 
   <script src="js/libs/jquery-1.11.2.min.js"></script>

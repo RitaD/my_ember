@@ -5,6 +5,7 @@ var App = Ember.Application.create({
 App.Router.map(function() {
   this.route('about', { path: '/aboutus'} );
   this.resource('products');
+  this.resource('product', {path: '/products/:title'});
 });
 
 App.PRODUCTS = [
@@ -25,6 +26,12 @@ App.PRODUCTS = [
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
     return App.PRODUCTS;
+  }
+});
+
+App.ProductRoute = Ember.Route.extend({
+  model: function(params) {
+    return App.PRODUCTS.findBy('title', params.title);
   }
 });
 
