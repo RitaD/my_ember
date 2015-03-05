@@ -25,13 +25,21 @@
     <h1>Welcome to About</h1>
   </script>
 
+  <script type="text/x-handlebars" data-template-name='products/index'>
+    <p>Choose a product</p>
+  </script>
+
   <script type="text/x-handlebars" data-template-name='products'>
     <h1>Welcome to Products</h1>
+    <div>
+      {{outlet}}
+    </div>
     {{#each}}
       {{#link-to 'product' this}}
         <h2>{{title}}</h2>
       {{/link-to}}
     {{/each}}
+
   </script>
 
   <script type="text/x-handlebars" data-template-name='product'>
