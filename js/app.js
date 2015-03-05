@@ -13,7 +13,14 @@ App.Product = DS.Model.extend({
   title: DS.attr(),
   price: DS.attr(),
   description: DS.attr(),
-  isOnSale: DS.attr()
+  isOnSale: DS.attr(),
+  reviews: DS.hasMany('review', {async: true})
+});
+
+App.Review = DS.Model.extend({
+  text: DS.attr('string'),
+  reviewedAt: DS.attr('date'),
+  product: DS.belongsTo('product')
 });
 
 App.ApplicationAdapter = DS.FixtureAdapter.extend();
@@ -24,7 +31,8 @@ App.Product.FIXTURES = [
     title: 'Flint',
     price: 99,
     description: 'Flint is a ..',
-    isOnSale: true
+    isOnSale: true,
+    reviews: [100,101]
   },
   {
     id: 2,
@@ -32,6 +40,19 @@ App.Product.FIXTURES = [
     price: 199,
     description: 'Kind is a ..',
     isOnSale: true
+  }
+];
+
+App.Review.FIXTURES = [
+  {
+    id: 100,
+    product: 1,
+    text: 'Lorem ipsum'
+  },
+  {
+    id: 101,
+    product: 1,
+    text: 'Lorem ipsum'
   }
 ];
 
