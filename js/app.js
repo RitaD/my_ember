@@ -74,7 +74,10 @@ App.IndexController = Ember.Controller.extend({
   }.property()
 });
 
+App.IndexController = Ember.ArrayController.extend({
+  productsCount: Ember.computed.alias('length')
+});
+
 App.ProductsController = Ember.ArrayController.extend({
   sortProperties: ['title']
 });
-
